@@ -1,0 +1,166 @@
+.header_search { width: 100%; height: 50px; float: left;}
+.header_search form {
+    width: 100%;
+    max-width: 641px;
+    /* padding-top: 24vh; */
+    float: left;
+    margin-left: 34px;
+}
+  
+.header_search form .inner-form {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 34px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.header_search form .inner-form .input-field {
+    height: 45px;
+  }
+  
+  .header_search form .inner-form .input-field input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .header_search form .inner-form .input-field input.placeholder {
+    color: #222;
+    font-size: 16px;
+  }
+  
+  .header_search form .inner-form .input-field input:-moz-placeholder {
+    color: #222;
+    font-size: 16px;
+  }
+  
+  .header_search form .inner-form .input-field input::-webkit-input-placeholder {
+    color: #222;
+    font-size: 16px;
+  }
+  
+  .header_search form .inner-form .input-field input:hover, .header_search form .inner-form .input-field input:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+  
+  .header_search form .inner-form .input-field.first-wrap {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    background: #d9f1e3;
+  }
+  
+  .header_search form .inner-form .input-field.first-wrap input {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+  }
+  
+  .header_search form .inner-form .input-field.first-wrap .svg-wrapper {
+    min-width: 64px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  
+  .header_search form .inner-form .input-field.first-wrap svg {
+    width: 36px;
+    height: 36px;
+    fill: #222;
+  }
+  
+  .header_search form .inner-form .input-field.second-wrap {
+    min-width: 104px;
+  }
+  
+  .header_search form .inner-form .input-field.second-wrap .btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 16px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    background: #00ad5f;
+    transition: all .2s ease-out, color .2s ease-out;
+    font-weight: 300;
+  }
+  
+  .header_search form .inner-form .input-field.second-wrap .btn-search:hover {
+    background: #009451;
+  }
+  
+  .header_search form .inner-form .input-field.second-wrap .btn-search:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+  
+  .header_search form .info {
+    font-size: 15px;
+    color: #ccc;
+    padding-left: 26px;
+  }
+
+.banner_search {
+    float: left;
+    width: 47px;
+    height: 47px;
+    background-color: #80dbb2;
+    margin-left: 120px;
+    border-radius: 50%;
+    padding: 1px;
+}
+.banner_search img {
+    border-radius: 50%;
+    border: #0d613b 1px solid;
+}
+.header_tab {
+    width: 100%;
+    float: left;
+    padding-left: 190px;
+}
+.header_tab_item {float: left; margin-left: 10px; cursor: pointer;}
+
+
+.search_result_content {width: 100%; padding-left: 200px; padding-top: 120px;}
+.search_result_content_main {width: 100%;    max-width: 641px; float: left;}
+.alert_from_server {width: 100%; font-size: 13px; color: #222; float: left;}
+.main_content_of_search {width: 100%; float: left; }
+.search_item { width: 100%; float: left; margin-top: 10px;}
+.search_item_url a { color: #066138; text-decoration: none;}
+.search_item_title { font-size: 25px;}
+.search_item_title a { text-decoration: none;}
+.search_item_content { display: flex;}
+.search_item_content_banner { width: 110px; height: 76px; float: left;}
+.search_item_content_text { float: left;}
+.result_icon { float: left; padding-right: 5px;}
+
+.margin-top-5 { margin-top: 5px;}
+.margin-top-10 { margin-top: 10px;}
+.margin-top-15 { margin-top: 15px;}
+.margin-top-20 { margin-top: 20px;}
+.margin-top-25 { margin-top: 25px;}
+
+.margin-left-5 { margin-left: 5px;}
+.margin-left-10 { margin-left: 10px;}
+.margin-left-15 { margin-left: 15px;}
+.margin-left-20 { margin-left: 20px;}
