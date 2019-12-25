@@ -22,9 +22,7 @@ def searchResult(request):
     
 def deals_by_search_data(request, search_key):
 
-    my_api_key = "AIzaSyA5snLbCdj7lBTOcK-FsZ4YYEFFMFY99j4"
-    
-    my_cse_id = "005923832153443857957:rkybk9fzauq"
+  
     
     results = google_search(search_key, my_api_key, my_cse_id, num=10)
     all_results = []
