@@ -13,7 +13,7 @@
         <link href="{% static 'css/search_result.css' %}" rel="stylesheet" />
     </head>
     <body>
-        <div class="header" style="border-bottom: rgb(212, 222, 211) 1px solid; position: fixed; width: 100%; height: 100px; background-color:rgba(247, 255, 245, 0.5)">
+        <div class="header" style="border-bottom: rgb(212, 222, 211) 1px solid; position: fixed; width: 100%; height: 100px; background-color:rgba(247, 255, 245, 1)">
                         <div class="header_search margin-top-15">
                                 <div class="banner_search">
                                     <img width="45px" height="45px;" src="{% static 'images/search_banner.png' %}">
@@ -62,9 +62,10 @@
                             <span>Resutls of Search: 100000000000</span>
                         </div>
                         <div class="main_content_of_search margin-top-20">
+                            {% for item in data %}
                             <div class="search_item">
                                 <div class="search_item_title">
-                                    <a href="#">Search_1</a>
+                                    <a href="#">{{ item.title }}</a>
                                 </div>
                                 <div class="search_item_url margin-top-5">
                                     <span class="result_icon">
@@ -72,80 +73,23 @@
                                             <img width="16px" height="16px;" src="{% static 'images/sample_2.ico' %}">
                                         </a>
                                     </span>                                    
-                                    <a class="result_url" href="">quote.eastmoney.com/sh601515.html</a>
+                                    <div class="result_url"><a href="">{{ item.url }}</a></div>
                                 </div>
                                 <div class="search_item_content margin-top-5">
                                     <div class="search_item_content_banner">
                                         <img width="110px" height="76px" src="{% static 'images/sample_1.jpg' %}">
                                     </div>
                                     <div class="search_item_content_text margin-left-5">
-                                        <span>IIY. 2017.02.13 07:36:31 字数40阅读9. 之前准备好的，终究还是送出去了。谢谢了， 谢谢。 记得开心，记得正能量，晚安，仙女。 0人点赞. 日记本 · Mr_Zoul. 拥有1钻( ...</span>
+                                        <span>{{ item.dis }}</span>
                                     </div>                                    
                                 </div>
                             </div>
-                            <div class="search_item">
-                                    <div class="search_item_title">
-                                        <a href="#">Search_1</a>
-                                    </div>
-                                    <div class="search_item_url margin-top-5">
-                                        <span class="result_icon">
-                                            <a href="">
-                                                <img width="16px" height="16px;" src="{% static 'images/sample_2.ico' %}">
-                                            </a>
-                                        </span>                                    
-                                        <a class="result_url" href="">quote.eastmoney.com/sh601515.html</a>
-                                    </div>
-                                    <div class="search_item_content margin-top-5">
-                                        <div class="search_item_content_banner">
-                                            <img width="110px" height="76px" src="{% static 'images/sample_1.jpg' %}">
-                                        </div>
-                                        <div class="search_item_content_text margin-left-5">
-                                            <span>IIY. 2017.02.13 07:36:31 字数40阅读9. 之前准备好的，终究还是送出去了。谢谢了， 谢谢。 记得开心，记得正能量，晚安，仙女。 0人点赞. 日记本 · Mr_Zoul. 拥有1钻( ...</span>
-                                        </div>                                    
-                                    </div>
-                            </div>
-                            <div class="search_item">
-                                    <div class="search_item_title">
-                                        <a href="#">Search_1</a>
-                                    </div>
-                                    <div class="search_item_url margin-top-5">
-                                        <span class="result_icon">
-                                            <a href="">
-                                                <img width="16px" height="16px;" src="{% static 'images/sample_2.ico' %}">
-                                            </a>
-                                        </span>                                    
-                                        <a class="result_url" href="">quote.eastmoney.com/sh601515.html</a>
-                                    </div>
-                                    <div class="search_item_content margin-top-5">
-                                        <div class="search_item_content_banner">
-                                            <img width="110px" height="76px" src="{% static 'images/sample_1.jpg' %}">
-                                        </div>
-                                        <div class="search_item_content_text margin-left-5">
-                                            <span>IIY. 2017.02.13 07:36:31 字数40阅读9. 之前准备好的，终究还是送出去了。谢谢了， 谢谢。 记得开心，记得正能量，晚安，仙女。 0人点赞. 日记本 · Mr_Zoul. 拥有1钻( ...</span>
-                                        </div>                                    
-                                    </div>
-                            </div>
-                            <div class="search_item">
-                                    <div class="search_item_title">
-                                        <a href="#">Search_1</a>
-                                    </div>
-                                    <div class="search_item_url margin-top-5">
-                                        <span class="result_icon">
-                                            <a href="">
-                                                <img width="16px" height="16px;" src="{% static 'images/sample_2.ico' %}">
-                                            </a>
-                                        </span>                                    
-                                        <a class="result_url" href="">quote.eastmoney.com/sh601515.html</a>
-                                    </div>
-                                    <div class="search_item_content margin-top-5">
-                                        <div class="search_item_content_banner">
-                                            <img width="110px" height="76px" src="{% static 'images/sample_1.jpg' %}">
-                                        </div>
-                                        <div class="search_item_content_text margin-left-5">
-                                            <span>IIY. 2017.02.13 07:36:31 字数40阅读9. 之前准备好的，终究还是送出去了。谢谢了， 谢谢。 记得开心，记得正能量，晚安，仙女。 0人点赞. 日记本 · Mr_Zoul. 拥有1钻( ...</span>
-                                        </div>                                    
-                                    </div>
-                            </div>
+                            {% endfor %}
+
+
+
+
+                           
             
                     </div>
             </div>

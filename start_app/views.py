@@ -3,18 +3,51 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User 
+from start_app.searchItem import SearchItem
+from googleapiclient.discovery import build
+import pprint
+
 # Create your views here.
 def start(request):
     return render(request, 'start.html', {})
 
 def searchResult(request):
 
-    
-    return redirect('deals_by_search_data', search_key=request.POST['search_key'])
-def deals_by_search_data(request, search_key):
-    
-    return render(request, 'deals_by_search_data.html', {'search_word': search_key,})
 
+    return redirect('deals_by_search_data', request.POST['search_key'])
+
+
+
+
+    
+def deals_by_search_data(request, search_key):
+
+    my_api_key = "AIzaSyA5snLbCdj7lBTOcK-FsZ4YYEFFMFY99j4"
+    
+    my_cse_id = "005923832153443857957:rkybk9fzauq"
+    
+    results = google_search(search_key, my_api_key, my_cse_id, num=10)
+    all_results = []
+    for result in results:
+
+        pprint.pprint(result)
+        title = result['title']
+        link = result['formattedUrl']
+        dis = result['snippet']
+        
+
+        all_results.append(SearchItem(title,link,dis))
+        print(title)
+        print(link)
+        print(dis)
+    
+    return render(request, 'deals_by_search_data.html', {'data': all_results,})
+
+def google_search(search_term, api_key, cse_id, **kwargs):
+    service = build("customsearch", "v1", developerKey = api_key)
+    res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
+    return res['items']
+    
 def signin(request):
      return render(request, 'signin.html', {})
 
@@ -32,32 +65,6 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
-# def loginpage(request):
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password =  request.POST['password']
-#         post = User.objects.filter(username=username)
-#         if post:
-#             username = request.POST['username']
-#             request.session['username'] = username
-#             return redirect("profile")
-#         else:
-#             return render(request, 'app_foldername/login.html', {})
-#     return render(request, 'signin.html', {})
 
-# def profile(request):
-#     if request.session.has_key('username'):
-#         posts = request.session['username']
-#         query = User.objects.filter(username=posts) 
-#         return render(request, 'signup.html', {"query":query})
-#     else:
-#         return render(request, 'login.html', {})
-
-# def logout(request):
-#     try:
-#         del request.session['username']
-#     except:
-#      pass
-#     return render(request, 'app_foldername/login.html', {})
 
     
